@@ -2,8 +2,8 @@ import numpy as np
 import yaml
 import h5py
 import json
-
-with open('/Users/charan/Desktop/elec/Project/hls4ml-master/hls4ml2/keras_config.yml') as file:
+# /Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml2/keras_config.yml
+with open('/Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml2/keras_config.yml') as file:
     yamlConfig = yaml.full_load(file)
 with open(yamlConfig['KerasJson']) as json_file:
     model_arch = json.load(json_file)

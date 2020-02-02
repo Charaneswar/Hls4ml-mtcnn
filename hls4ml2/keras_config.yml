@@ -1,5 +1,5 @@
-KerasJson: /Users/charan/Desktop/elec/Project/hls4ml-master/hls4ml2/network_json/pnet.json
-KerasH5: /Users/charan/Desktop/elec/Project/hls4ml-master/hls4ml2/weight/pnet.h5
+KerasJson: /Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml2/network_json/pnet.json
+KerasH5: /Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml2/weight/pnet.h5
 #InputData: keras/KERAS_3layer_input_features.dat
 #OutputPredictions: keras/KERAS_3layer_predictions.dat
 OutputDir: pnet-hls
