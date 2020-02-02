@@ -6,6 +6,13 @@
   <component name="ProjectId" id="1WelYkIJdcM7FAXn9Q5djwNfc0X" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="288" y="52" key="CommitChangelistDialog2" timestamp="1580655827603">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="288" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1580655827603" />
   </component>
 </project>
