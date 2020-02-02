@@ -17,7 +17,7 @@ MAXMULT = 4096
 filedir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(filedir, "..", "hls_writer"))
 
-with open('/Users/charan/Desktop/elec/Project/hls4ml-master/hls4ml2/keras_config.yml') as file:
+with open('/Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml2/keras_config.yml') as file:
     yamlConfig = yaml.full_load(file)
 
 
