@@ -74,20 +74,33 @@ for keras_layer in model_arch["config"]["layers"]:
     # .format(layer['name'], layer['name'])][()]
     # print(layer['name']]
     layer['name'] = keras_layer['name']
-    for config, config_value in keras_layer["config"].items():
-        if config == "activation":
-            layer['activation'] = config_value
-            # ju = 'max_pooling2d_7'
-            # s = f.get('conv2d_13/conv2d_13')
-            d = f.get('/{}/{}'.format(layer['name'], layer['name']))
-            e = list(d.items())
-            r = np.array(d.get('kernel:0'))
-            l = np.array(d.get('bias:0'))
-            print(r.shape)
-            print(l.shape)
-
-    # print(layer['name'])
-    # print(keras_layer["config"].items())
+    # for config, config_value in keras_layer["config"].items():
+    #     if config == "activation":
+    #         layer['activation'] = config_value
+    #         # ju = 'max_pooling2d_7'
+    #         # s = f.get('conv2d_13/conv2d_13')
+    #         d = f.get('/{}/{}'.format(layer['name'], layer['name']))
+    #         e = list(d.items())
+    #         r = np.array(d.get('kernel:0'))
+    #         l = np.array(d.get('bias:0'))
+    #         print(r.shape)
+    #         print(l.shape)
+    #
+    # # print(layer['name'])
+    # # print(keras_layer["config"].items())
+    #         shape_count = 0
+    #         for x in r.shape:
+    #             print(x)
+    #             if shape_count == 0:
+    #                 layer['n_in'] = x
+    #                 print(layer['n_in'])
+    #             elif shape_count == 1:
+    #                 layer['n_out'] = x
+    #             else:
+    #                 raise Exception('ERROR: WRONG DIMENSIONS')
+    #             shape_count = shape_count + 1
+    a = keras_layer["config"].get('alpha')
+    print(a)
 
 # List all groups
 # print("Keys: %s" % f.keys())
