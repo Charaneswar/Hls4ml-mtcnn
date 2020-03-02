@@ -7,6 +7,8 @@ import os
 import re
 
 
+
+
 def hls_writer(layer_list, yamlConfig):
     filedir = os.path.dirname(os.path.abspath(__file__))
 
