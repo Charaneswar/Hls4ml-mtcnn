@@ -451,7 +451,7 @@ def hls_writer(layer_list, yamlConfig):
                                                                                         activation_name,
                                                                                         act_input_object, i,
                                                                                         output_object)
-                    elif layer_list[i - 1]['activation'] == "softmax":
+                    elif layer_list[i - 1]['activation'] == "Softmax":
                         newline += '    nnet::softmax<{}, {}, {}>({}, {});\n'.format(act_input_type, output_type,
                                                                                      activation_name, act_input_object,
                                                                                      output_object)
