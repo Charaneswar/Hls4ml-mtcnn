@@ -7,8 +7,6 @@ import os
 import re
 
 
-
-
 def hls_writer(layer_list, yamlConfig):
     filedir = os.path.dirname(os.path.abspath(__file__))
 
@@ -36,7 +34,7 @@ def hls_writer(layer_list, yamlConfig):
                 is_dense = True
                 break
 
-    activation_layers = ['Activation', 'LeakyReLU', 'ThresholdedReLU', 'ELU', 'PReLU','Softmax']
+    activation_layers = ['Activation', 'LeakyReLU', 'ThresholdedReLU', 'ELU', 'PReLU']
 
     # lines to add to .cpp for sublayers
     sublayerlines = []
@@ -273,7 +271,7 @@ def hls_writer(layer_list, yamlConfig):
                             sublayerline += '    #pragma HLS ARRAY_PARTITION variable=logits{}_{} complete dim=0\n'.format(
                                 i, i_part)
 
-                        # initialize arrays for merged partial outputs 
+                        # initialize arrays for merged partial outputs
                         for i_part in range(1, layer_list[i - 1]['n_part'] - 1):
                             n_mergeout = sum([layer_list[i - 1]['n_subout'][kk] for kk in range(0, i_part + 1)])
                             sublayerline += '    {} logits{}_0to{}[{}];\n'.format(output_type, i, i_part, n_mergeout)

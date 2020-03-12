@@ -1,5 +1,5 @@
-KerasJson: /Users/charan/Desktop/elec.I/Project/hls4ml-master3/network_json/pnet.json
-KerasH5: /Users/charan/Desktop/elec.I/Project/hls4ml-master3/weight/pnet.h5
+KerasJson: /Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml-master3/network_json/pnet.json
+KerasH5: /Users/charan/Desktop/elec.I/Project/Hls4ml-mtcnn/hls4ml-master3/weight/pnet.h5
 InputData: example-keras-model-files/KERAS_3layer_input_features.dat
 OutputPredictions: example-keras-model-files/KERAS_3layer_predictions.dat
 TruthLabels: example-keras-model-files/KERAS_3layer_truth_labels.dat

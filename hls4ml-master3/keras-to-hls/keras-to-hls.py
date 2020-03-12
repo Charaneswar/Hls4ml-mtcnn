@@ -86,7 +86,7 @@ def main():
     # Define supported laers
     supported_layers = ['InputLayer', 'Dropout', 'Flatten', 'Dense', 'BinaryDense', 'TernaryDense', 'Conv1D', 'Conv2D',
                         'BatchNormalization', 'MaxPooling1D', 'MaxPooling2D', 'AveragePooling1D', 'AveragePooling2D']
-    activation_layers = ['Activation', 'LeakyReLU', 'ThresholdedReLU', 'ELU', 'PReLU','Softmax']
+    activation_layers = ['Activation', 'LeakyReLU', 'ThresholdedReLU', 'ELU', 'PReLU', 'Softmax']
 
     # Define layers to skip for conversion to HLS
     skip_layers = ['InputLayer', 'Dropout', 'Flatten']
@@ -193,7 +193,7 @@ def main():
             'class_name'] == 'TernaryDense':
             layer['n_in'] = weights.shape[0]
             layer['n_out'] = weights.shape[1]
-            # if this layer is too big (more than MAXMULT multiplications); 
+            # if this layer is too big (more than MAXMULT multiplications);
             # break it out into chunks!
             layer['n_subout'] = [weights.shape[1]]
             if layer['n_in'] * layer['n_out'] > MAXMULT:
@@ -373,15 +373,13 @@ def main():
                 layer['activation'] = layer['class_name']
                 layer['activ_param'] = keras_layer["config"].get('theta', 1.)
 
-        elif layer['class_name'] == 'Softmax':
+        elif layer['class_name'] == 'softmax':
             if layer_list[-1]['class_name'] != 'BatchNormalization':
                 layer_list[-1]['activation'] = layer['class_name']
                 skip_layer = True
                 layer_counter = layer_counter - 1
             else:
                 layer['activation'] = layer['class_name']
-
-
 
         elif layer['class_name'] == 'ELU':
             if layer_list[-1]['class_name'] != 'BatchNormalization':
