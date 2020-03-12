@@ -414,6 +414,7 @@ def hls_writer(layer_list, yamlConfig):
 
                     activation_name = layer_list[i - 1]['activation'] + '_config' + str(i)
                     activation_param = layer_list[i - 1].get('activ_param')
+                    print('activation:',layer_list[i - 1]['activation'])
                     if layer_list[i - 1]['activation'] == "relu":
                         newline += '    nnet::relu<{}, {}, {}>({}, {});\n'.format(act_input_type, output_type,
                                                                                   activation_name, act_input_object,
@@ -451,7 +452,7 @@ def hls_writer(layer_list, yamlConfig):
                                                                                         activation_name,
                                                                                         act_input_object, i,
                                                                                         output_object)
-                    elif layer_list[i - 1]['activation'] == "softmax":
+                    elif layer_list[i - 1]['activation'] == "Softmax":
                         newline += '    nnet::softmax<{}, {}, {}>({}, {});\n'.format(act_input_type, output_type,
                                                                                      activation_name, act_input_object,
                                                                                      output_object)

@@ -63,7 +63,6 @@ typedef ap_fixed<16,6> layer2_t;
 typedef ap_fixed<16,6> layer3_t;
 typedef ap_fixed<16,6> layer4_t;
 typedef ap_fixed<16,6> layer5_t;
-typedef ap_fixed<16,6> layer6_t;
 
 //hls-fpga-machine-learning insert layer-config
 struct config1 : nnet::conv2d_config {
@@ -214,7 +213,7 @@ struct config6 : nnet::conv2d_config {
         typedef bias_default_t bias_t;
         typedef weight_default_t weight_t;
         };
-struct linear_config6 : nnet::activ_config {
+struct Softmax_config6 : nnet::activ_config {
         static const unsigned n_in = OUT_HEIGHT_6*OUT_WIDTH_6*N_FILT_6;
         static const unsigned table_size = 1024;
         static const unsigned io_type = nnet::io_parallel;

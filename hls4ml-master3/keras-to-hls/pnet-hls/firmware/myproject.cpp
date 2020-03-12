@@ -42,8 +42,6 @@
 #include "weights/b5.h"
 #include "weights/w6.h"
 #include "weights/b6.h"
-#include "weights/w7.h"
-#include "weights/b7.h"
 
 void myproject(
 		  input_t data[IN_HEIGHT_1][IN_WIDTH_1][N_CHAN_1],
@@ -124,8 +122,6 @@ void myproject(
     nnet::flatten<layer5_t, OUT_HEIGHT_5, OUT_WIDTH_5, N_FILT_5>(conv2d_layer5_out, logits5);
     nnet::linear<layer5_t, layer5_t, linear_config5>(logits5, layer5_out);
 
-    layer6_t layer6_out[OUT_HEIGHT_6*OUT_WIDTH_6*N_FILT_6];
-    #pragma HLS ARRAY_PARTITION variable=layer6_out complete dim=0
     layer5_t conv2d_layer6_in[IN_HEIGHT_6][IN_WIDTH_6][N_CHAN_6];
     #pragma HLS ARRAY_PARTITION variable=conv2d_layer6_in complete dim=0
     nnet::unflatten<layer5_t, IN_HEIGHT_6, IN_WIDTH_6, N_CHAN_6>(layer5_out, conv2d_layer6_in);
@@ -135,8 +131,7 @@ void myproject(
     layer6_t logits6[OUT_HEIGHT_6*OUT_WIDTH_6*N_FILT_6];
     #pragma HLS ARRAY_PARTITION variable=logits6 complete dim=0
     nnet::flatten<layer6_t, OUT_HEIGHT_6, OUT_WIDTH_6, N_FILT_6>(conv2d_layer6_out, logits6);
-    nnet::linear<layer6_t, layer6_t, linear_config6>(logits6, layer6_out);
-
+    nnet::softmax<layer6_t, layer6_t, Softmax_config6>(logits6, layer6_out);
 
 
 }
