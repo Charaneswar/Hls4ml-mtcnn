@@ -373,7 +373,7 @@ def main():
                 layer['activation'] = layer['class_name']
                 layer['activ_param'] = keras_layer["config"].get('theta', 1.)
 
-        elif layer['class_name'] == 'Softmax':
+        elif layer['class_name'] == 'softmax':
             if layer_list[-1]['class_name'] != 'BatchNormalization':
                 layer_list[-1]['activation'] = layer['class_name']
                 skip_layer = True
