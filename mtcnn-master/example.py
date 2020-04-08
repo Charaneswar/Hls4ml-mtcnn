@@ -13,7 +13,7 @@ p_value = NetworkFactory().build_pnet()
 o_value = NetworkFactory().build_onet()
 r_value = NetworkFactory().build_rnet()
 #
-image = cv2.cvtColor(cv2.imread("ivan.jpg"), cv2.COLOR_BGR2RGB)
+image = cv2.cvtColor(cv2.imread("lena.jpg"), cv2.COLOR_BGR2RGB)
 result = detector.detect_faces(image)
 
 # # Result is an array with all the bounding boxes detected.
@@ -35,7 +35,7 @@ for i in range(len(result)):
 #
 cv2.imwrite("box_drawn.jpg", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
 # p1 = []
-# p = p_value.layers[2].predict()
+p = p_value.layers
 # o = o_value.layers
 # r = r_value.layers
 # model_json= r_value.to_json()
@@ -46,4 +46,4 @@ cv2.imwrite("box_drawn.jpg", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
 # for i in range(len(p)):
 #     p1.append(p[i])
 # np.savetxt('p_weight.csv', , fmt='%s', delimiter=',')
-# print(p)
+print(p)

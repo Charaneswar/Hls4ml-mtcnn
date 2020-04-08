@@ -334,7 +334,7 @@ class MTCNN(object):
             out = self._pnet.predict(img_y)
             print('img_shape:', img_y.shape, '', end='')
             get_3rd_layer_output = K.function([p_value.layers[0].input],
-                                              [p_value.layers[3].output])
+                                              [p_value.layers[6].output])
             layer_output = get_3rd_layer_output(img_y)[0]
 
             # model = p_value  # include here your original model
