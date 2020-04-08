@@ -33,7 +33,7 @@ for i in range(len(result)):
     cv2.circle(image, (keypoints['mouth_left']), 2, (0, 155, 255), 2)
     cv2.circle(image, (keypoints['mouth_right']), 2, (0, 155, 255), 2)
 #
-cv2.imwrite("appa_drawn.jpg", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+cv2.imwrite("box_drawn.jpg", cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
 # p1 = []
 # p = p_value.layers[2].predict()
 # o = o_value.layers
